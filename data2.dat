@@ -1,0 +1,36 @@
+# scan = 3
+# date = 7/2/2018
+# time = 8:18:37 PM
+# proposal = 19949
+# experiment = Determination of the magnetic phases in Yb2Ge2O7
+# experiment_number = 652
+# command = scan 2theta 3 9 0.05 preset time 60
+# builtin_command = scan 2theta 3 9 0.05 preset time 60
+# users = Clarina Dela Cruz, Joseph Kolis, Keith Taddei, Liurukara Sanjeewa, Daniel Pajerowski
+# local_contact = 
+# scan_title = YGO, ge113, op-21-12, 75 mK, 2hr, redo
+# monochromator = 
+# analyzer = 
+# sense = -+-
+# collimation = 48-40-40-120
+# samplename = Yb2Ge2O7
+# sampletype = crystal
+# samplemosaic = 30.000000
+# latticeconstants = 5.000000,5.000000,5.000000,90.000000,90.000000,90.000000
+# ubmatrix = -0.141421,-0.141421,0.000000,-0.000000,-0.000000,-0.200000,0.141421,-0.141421,0.000000
+# mode = 0
+# plane_normal = 0.000000,0.000000,1.000000
+# ubconf = UB02Jul2018_121630PM.ini
+# preset_type = normal 
+# preset_channel = time
+# preset_value = 60.000000
+# def_x = 2theta
+# def_y = monitor
+# col_headers = 
+#   Pt.     2theta       time    monitor   detector     anode1     anode2     anode3     anode4     anode5     anode6     anode7     anode8     anode9    anode10    anode11    anode12    anode13    anode14    anode15    anode16    anode17    anode18    anode19    anode20    anode21    anode22    anode23    anode24    anode25    anode26    anode27    anode28    anode29    anode30    anode31    anode32    anode33    anode34    anode35    anode36    anode37    anode38    anode39    anode40    anode41    anode42    anode43    anode44         m1       coll   pgfilter     camrot  colltrans      mag_b         s1        sgl        sgu slit_pre_bt slit_pre_lf slit_pre_rt slit_pre_tp        stl        stu        vti     sample       temp persistent_field dr_tsample    dr_temp
+      1     3.0000     60.000  11689.000  33838.000    753.000    438.000    407.000    352.000    362.000    289.000    300.000    286.000    298.000    351.000    306.000    298.000    298.000    266.000    294.000   3868.000   3280.000    402.000    234.000    217.000    235.000    265.000    433.000    281.000    301.000   1697.000    961.000    343.000   1284.000   2998.000   5586.000    403.000    299.000    495.000    267.000    455.000    327.000    346.000    317.000   1368.000    566.000    733.000    361.000    218.000     9.4500     0.0000     0.0000   180.0000     0.0000     0.0000    -0.0001     0.0000     0.0000    25.0000     5.0000     5.0000    25.0000     0.4950     0.0000     1.5896   329.0270     1.0000     0.0000     0.1351     0.001
+      2     3.0500     60.000      0.000  11447.000    235.000    172.000    154.000    116.000    106.000    101.000    102.000    104.000    111.000    115.000     73.000     86.000     91.000     80.000     90.000   1182.000   1142.000    111.000     67.000     84.000     89.000     87.000    126.000    112.000    100.000    805.000    239.000    107.000    471.000   1093.000   1796.000    143.000    107.000    185.000     83.000    149.000    104.000    112.000     92.000    480.000    214.000    248.000    116.000     67.000     9.4500     0.0000     0.0000   180.0000     0.0000     0.0000    -0.0001     0.0000     0.0000    25.0000     5.0000     5.0000    25.0000     0.4950     0.0000     1.5897   329.0270     1.0000     0.0000     0.1897     0.001
+# Sum of Counts = 11689
+# Center of Mass = 3.000000+/-0.039242
+# Full Width Half-Maximum = 0.000000+/-NaN
+# 8:20:37 PM  7/2/2018   scan stopped!!
