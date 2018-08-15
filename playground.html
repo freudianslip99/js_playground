@@ -1194,15 +1194,50 @@
       }
     ];
 
-    //console.log(data);
+    //minimum anode values
+    data.forEach(element => {
+      for (var key in element) {
+        if (key.startsWith("anode")) {
+          console.log(key, "->", Math.min(...element[key]));
+        }
+      }
+    });
 
+
+
+    //maximum anode values
+    data.forEach(element => {
+      for (var key in element) {
+        if (key.startsWith("anode")) {
+          console.log(key, "->>", Math.max(...element[key]));
+        }
+      }
+    });
+    //minimum 2theta values
+    data.forEach(element => {
+      for (var key in element) {
+        if (key.startsWith("2theta")) {
+          console.log(key, "->>>", Math.min(...element[key]));
+        }
+      }
+    });
+    //maximum 2theta values
+    data.forEach(element => {
+      for (var key in element) {
+        if (key.startsWith("2theta")) {
+          console.log(key, "->>>", Math.max(...element[key]));
+        }
+      }
+    });
+
+    //minimum of the minimum anode values
     var allMins = []
-    //anode min is 27
+
     data.forEach(element => {
       for (var key in element) {
         if (key.startsWith("anode")) {
           var localMin = Math.min(...element[key]);
-          //console.log(key, "->",);
+
           allMins.push(localMin);
         }
 
@@ -1211,35 +1246,24 @@
     console.log(allMins);
     console.log("Global Min:", Math.min(...allMins));
 
-    /*
-        //anode max is 4,197
-        data.forEach(element => {
-          for (var key in element) {
-            if (key.startsWith("anode")) {
-              console.log(key, "->>", Math.max(...element[key]));
-            }
-          }
-        });
-        //2theta min is 5
-        data.forEach(element => {
-          for (var key in element) {
-            if (key.startsWith("2theta")) {
-              console.log(key, "->>>", Math.min(...element[key]));
-            }
-          }
-        });
-        //2theta max is 11
-        data.forEach(element => {
-          for (var key in element) {
-            if (key.startsWith("2theta")) {
-              console.log(key, "->>>", Math.max(...element[key]));
-            }
-          }
-        });
-    */
+    //maximum of the maximum anode values
+    var allMax = []
+
+    data.forEach(element => {
+      for (var key in element) {
+        if (key.startsWith("anode")) {
+          var localMax = Math.max(...element[key]);
+
+          allMax.push(localMax);
+        }
+
+      }
+    });
+    console.log(allMax);
+    console.log("Global Max:", Math.max(...allMax));
 
 
-
+    //plot dimensions
     var margin = { top: 50, right: 50, bottom: 50, left: 50 }
       , width = window.innerWidth - margin.left - margin.right // Use the window's width
       , height = window.innerHeight - margin.top - margin.bottom; // Use the window's height
