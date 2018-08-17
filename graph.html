@@ -120,6 +120,9 @@
         $('#rawtext').append(fileContent);
       }
     }
+
+    //parseFloatfinal[x]).toFixed(2);
+
     function parseLineByLine(file) {
 
       var lines = file.split('\n');
@@ -127,7 +130,8 @@
       header = null;
       data = [];
       for (var line = 0; line < lines.length; line++) {
-        thisLine = lines[line]
+        var thisLine = lines[line]
+
         if (thisLine.startsWith("#   Pt.")) {
           header = thisLine;
         }
@@ -175,26 +179,22 @@
 
       // iterate rows
       rows.forEach(function (row) {
-        // i = index of element in a row
-        // create empty object
+
+
         obj = {};
-        for (i = 0; i < row.length; i++) {
-          obj[header[i]] = row[i];
+        for (i = 0; i < rows.length; i++) {
+          thisX = i[row]
 
-          /* if (header[i].startsWith("#   Pt.")) {
-            header = thisLine;
+          if (thisX.startsWith("anode") || (thisX.startsWith("2theta"))) {
+            header = thisX;
+            obj[header[i]] = row[i];
           }
-          else if (thisLine.startsWith("#")) {
-          }
-          else {
-            data.push(thisLine);
-          } */
 
 
-          final.push(obj);
         }
       });
 
+      final.push(obj);
 
       plotData = final;
 
