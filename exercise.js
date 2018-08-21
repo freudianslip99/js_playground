@@ -858,19 +858,92 @@ console.log('subarrays in rows= ', rl);
 var n = header.indexOf('2theta');
 console.log('>>>>>index of 2theta =', n);
 
+var out = [];
 rows.forEach(function(row, rowIdx) {
   row.forEach(function(element, elementIdx) {
-    console.log(rowIdx, elementIdx, element);
+    // console.log(rowIdx, elementIdx, element);
+    if (elementIdx == n) {
+      //out.push(element);
+      out.push({ index: elementIdx, value: element });
+    }
   });
 });
 
-console.log('forEach Ids of rows = ', rows[0][0]);
+console.log('Solution:', out);
+
+//console.log('forEach Ids of rows = ', rows[0][0]);
 
 var valueAtIndex1 = rows[1];
 console.log('values at index 1     ', valueAtIndex1);
 
-// Create an array of arrays whose indices are "anode#".
+// // Create an array of arrays whose indices are "anode#".
+//
+// [
+//   [3, 4, 5, 6, 6,....], //44 times (1 per anode)
+//   (...............)
+//   [3, 4, 5, 5, 55......],
+// ]; // 10 rows
+
+// out = header.map((value, index) => {
+//   if (value.startsWith('anode')) {
+//     return index;
+//   }
+// });
+
+var indicesToPush = [];
+header.forEach((value, index) => {
+  if (value.startsWith('anode')) {
+    indicesToPush.push(index);
+  }
+});
+
+// out_rows = []
+// foreach over all rows
+// // out_row = [] // scope row (valid only during the inner cycle)
+// // Foreach element in a row
+// // // if element_index in indicesToPush: out_row.push(element)
+// // out_rows.push(out_row)
+
+console.log('************** solution:', out);
+
+// // var subAnode3 = [];
+
+// // var i;
+// // for (i = 0; i < rows.length; i++) {
+// //   var rowsValue = rows[i];
+// //   if (rowsValue.startsWith('  ')) {
+// //     subAnode3.push(rowsValue);
+// //   }
+// // }
+
+// function locAnode(element, index, array) {
+//   return element == 'anode';
+// }
+
+// var newSet = new Array(rows);
+
+// var newArray = newSet.filter(locAnode);
+// console.log('new Array    ', newArray);
+
+var a = [header],
+  b = [rows];
+var d = a.push(...b);
+console.log('concat   ', d);
 
 // Do de same but for '2theta' and 'anode#'
 
 console.log('****************** End **********************');
+
+x = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+
+out = [];
+x.forEach(innerArray => {
+  var outNested = [];
+  console.log(innerArray, '->', out);
+  innerArray.forEach(element => {
+    console.log(element);
+    outNested.push(element);
+  });
+  out.push(outNested);
+});
+console.log('Final:', out);

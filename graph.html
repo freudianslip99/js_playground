@@ -183,11 +183,10 @@
 
         obj = {};
         for (i = 0; i < rows.length; i++) {
-          thisX = i[row]
+          rowsValue = rows[i]
 
-          if (thisX.startsWith("anode") || (thisX.startsWith("2theta"))) {
-            header = thisX;
-            obj[header[i]] = row[i];
+          if (rowsValue.startsWith("anode") || (rowsValue.startsWith("2theta"))) {
+            final.push(rowsValue);
           }
 
 
