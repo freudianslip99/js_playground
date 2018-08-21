@@ -795,11 +795,11 @@ for (i = 0; i < header.length; i++) {
 
 console.log('Indicies of anode = ', output);
 
-// var output2 = [];
-// header.forEach(function(headerValue, i, array) {
-//   output2.push(i + ' -> ' + headerValue);
-// });
-// console.log('Ex. 2.1 out = ', output2);
+var output2 = [];
+header.forEach(function(headerValue, i, array) {
+  output2.push(i + ' -> ' + headerValue);
+});
+console.log('Ex. 2.1 out = ', output2);
 
 var index, len;
 
@@ -861,7 +861,6 @@ console.log('>>>>>index of 2theta =', n);
 var out = [];
 rows.forEach(function(row, rowIdx) {
   row.forEach(function(element, elementIdx) {
-    // console.log(rowIdx, elementIdx, element);
     if (elementIdx == n) {
       //out.push(element);
       out.push({ index: elementIdx, value: element });
@@ -871,24 +870,24 @@ rows.forEach(function(row, rowIdx) {
 
 console.log('Solution:', out);
 
-//console.log('forEach Ids of rows = ', rows[0][0]);
+console.log('forEach Ids of rows = ', rows[0][0]);
 
 var valueAtIndex1 = rows[1];
 console.log('values at index 1     ', valueAtIndex1);
 
-// // Create an array of arrays whose indices are "anode#".
-//
+// Create an array of arrays whose indices are "anode#".
+
 // [
 //   [3, 4, 5, 6, 6,....], //44 times (1 per anode)
 //   (...............)
 //   [3, 4, 5, 5, 55......],
 // ]; // 10 rows
 
-// out = header.map((value, index) => {
-//   if (value.startsWith('anode')) {
-//     return index;
-//   }
-// });
+out = header.map((value, index) => {
+  if (value.startsWith('anode')) {
+    return index;
+  }
+});
 
 var indicesToPush = [];
 header.forEach((value, index) => {
@@ -905,30 +904,6 @@ header.forEach((value, index) => {
 // // out_rows.push(out_row)
 
 console.log('************** solution:', out);
-
-// // var subAnode3 = [];
-
-// // var i;
-// // for (i = 0; i < rows.length; i++) {
-// //   var rowsValue = rows[i];
-// //   if (rowsValue.startsWith('  ')) {
-// //     subAnode3.push(rowsValue);
-// //   }
-// // }
-
-// function locAnode(element, index, array) {
-//   return element == 'anode';
-// }
-
-// var newSet = new Array(rows);
-
-// var newArray = newSet.filter(locAnode);
-// console.log('new Array    ', newArray);
-
-var a = [header],
-  b = [rows];
-var d = a.push(...b);
-console.log('concat   ', d);
 
 // Do de same but for '2theta' and 'anode#'
 
