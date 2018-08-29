@@ -905,20 +905,192 @@ header.forEach((value, index) => {
 
 console.log('************** solution:', out);
 
+out_rows = [];
+rows.forEach(innerA => {
+  out_rowsNested = [];
+  innerA.forEach((element, index) => {
+    if (header[index].startsWith('anode')) {
+      out_rowsNested.push(element);
+    }
+  });
+  out_rows.push(out_rowsNested);
+});
+
+console.log('Solution3       :', out_rows);
+
 // Do de same but for '2theta' and 'anode#'
+
+// out2 = header.map((value, index) => {
+//   if (value.startsWith('anode') || value.startsWith('2theta')) {
+//     return index;
+//   }
+// });
+
+// var indicesToPush = [];
+// header.forEach((value, index) => {
+//   if (value.startsWith('anode') || value.startsWith('2theta')) {
+//     indicesToPush.push(index);
+//   }
+// });
+
+// console.log('************** solution2:', out2);
 
 console.log('****************** End **********************');
 
-x = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
+// x = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
-out = [];
-x.forEach(innerArray => {
-  var outNested = [];
-  console.log(innerArray, '->', out);
-  innerArray.forEach(element => {
-    console.log(element);
-    outNested.push(element);
-  });
-  out.push(outNested);
+// out = [];
+// x.forEach(innerArray => {
+//   var outNested = [];
+//   console.log(innerArray, '->', out);
+//   innerArray.forEach(element => {
+//     console.log(element);
+//     outNested.push(element);
+//   });
+//   out.push(outNested);
+// });
+// console.log('Final:', out);
+
+// z = rows;
+// out4 = [];
+// z.forEach(innerArray2 => {
+//   var outNested2 = [];
+//   console.log(innerArray2, '->', out4);
+//   innerArray2.forEach(element => {
+//     console.log(element);
+//     outNested2.push(element);
+//   });
+//   out4.push(outNested2);
+// });
+// console.log('Final2:', out4);
+
+// var myArray = [],
+//   X = 44;
+// while (myArray.length < X) {
+//   myArray.push([]);
+// }
+// console.log(myArray);
+
+// function size(rows) {
+//   var row_count = rows.length;
+//   var row_sizes = [];
+//   for (var i = 0; i < row_count; i++) {
+//     row_sizes.push(rows[i].length);
+//   }
+//   return [row_count, Math.min.apply(null, row_sizes)];
+// }
+
+// r = size([rows]);
+
+// console.log('size of rows', r);
+
+// h = size([header]);
+
+// console.log('size of header', h);
+
+// //fill array
+
+// var arr = [];
+// var r = 10;
+// var c = 44;
+
+// fillArray(arr, r, c);
+
+// function fillArray(arr, r, c) {
+//   for (var i = 0; i < r; i++) {
+//     arr.push([0]);
+//     for (var j = 0; j < c; j++) {
+//       arr[i][j] = 0;
+//     }
+//   }
+// }
+
+// console.log(arr);
+// var grades = [[89, 77, 78], [76, 82, 81], [91, 94, 89]];
+// var header = ['a', 'anode1', 'anode2'];
+
+// var out = {};
+// header.forEach(el => {
+//   if (el.startsWith('anode')) {
+//     out[el] = [];
+//   }
+// });
+// console.log('Out init:', JSON.stringify(out));
+
+// grades.forEach((arr, i) => {
+//   //console.log(i, arr);
+//   console.log('Row number:', i, ' :: Content:', arr);
+//   arr.forEach((el, j) => {
+//     console.log('    header:', header[j], ':: index:', j, ':: value:', el);
+//     if (header[j].startsWith('anode')) {
+//       out[header[j]].push(el);
+//     }
+//   });
+// });
+
+// JSON.stringify(header);
+// JSON.stringify(grades);
+
+var r = rows;
+var h = header;
+
+var out = {};
+header.forEach(el => {
+  if (el.startsWith('anode')) {
+    out[el] = [];
+  }
 });
-console.log('Final:', out);
+console.log('Out header: ', JSON.stringify(out));
+
+rows.forEach((arr, i) => {
+  console.log('Row number:', i, ' :: Content:', arr);
+  arr.forEach((el, j) => {
+    console.log('    header:', header[j], ':: index:', j, ':: value:', el);
+    if (header[j].startsWith('anode')) {
+      out[header[j]].push(el);
+    }
+  });
+});
+
+JSON.stringify(out);
+JSON.stringify(rows);
+
+// Have the data format like this
+// [
+//   {
+//     "2theta": "0.1",
+//     "anode1": 12.4,
+//     "anode2": 13.7,
+//     "anode3": 14.2
+//     (...)
+//     "anode49": 14.2
+//   },
+//   {
+//     "2theta": "0.2",
+//     "anode1": 1.4,
+//     "anode2": 1.7,
+//     "anode3": 1.2
+//     (...)
+//     "anode49": 10.2
+//   },
+//   (..................................)
+// ]
+
+h2 = header;
+r2 = rows;
+
+out_rows2 = [];
+r2.forEach(innerA => {
+  out_rowsNested = [];
+  innerA.forEach((element, index) => {
+    if (
+      header[index].startsWith('anode') ||
+      header[index].startsWith('2theta')
+    ) {
+      out_rowsNested.push(element);
+    }
+  });
+  out_rows2.push(out_rowsNested);
+});
+
+console.log('Solution4       :', out_rows2);
