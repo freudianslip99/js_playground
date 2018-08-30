@@ -1,1 +1,1 @@
-# Exercies in data formatting with arrays in Javascript 
+# Exercises in data formatting, with arrays, in Javascript 
