@@ -1,1 +1,1 @@
-# js_playground
+# Exercies in data formatting with arrays in Javascript 
